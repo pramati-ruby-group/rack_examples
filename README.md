@@ -2,7 +2,9 @@
 
 [Rack](https://github.com/rack/rack) provides a minimal interface between webservers supporting Ruby and Ruby frameworks. It is a middleware, which interfaces with your Ruby code to the Webservers.
 
-This repository is dedicated to have all possible ways you can use Rack using your Ruby code, or probably to create your own little web applciation frramework.
+This repository is dedicated to have all possible ways you can use Rack using your Ruby code, or probably to create your own small web application framework.
+
+For now, this is small and a go to reference on the rack topic for people who want to explore more in the Ruby ecosystem. Feel free to fork and add your knowledge to enlighten others who would want to learn.
 
 ## How to use?
 
