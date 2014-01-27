@@ -22,6 +22,11 @@ or if you wanna see how thin can be run using a .ru file:
 
     $ thin start -R thin.ru
 
+
+Open your favorite web browser and go to - localhost:8080(please do check the port number as it may differ on your machine).
+
+So, all you've seen so far is the code ran from app.rb, served onto the browser by the courtesy of Rack handlers for web servers.
+
 ## Contributing
 
 1. [Fork](https://help.github.com/articles/fork-a-repo) the project
