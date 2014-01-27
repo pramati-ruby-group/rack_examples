@@ -1,3 +1,5 @@
+require "erb"
+
 class App
   def initialize
   end
@@ -15,21 +17,30 @@ class App
 
   def root
     data = Time.now.to_s
-    display_content(data)
+    respond(data)
   end
 
   def foo
     data = 'I am in foo'
-    display_content(data)
+    respond(data)
   end
 
   def counter(num)
-   display_content(num)
+    respond(num)
   end
  
   private
-    def display_content(data)
-      [200, { "Content-Type" => "text/plain", "Content-Length" => data.size.to_s }, [data]]
+    def respond(content, error_code: 200, content_type: "text/html")
+      html_content = content_type == "text/html" ? process_html(content) : content
+      [error_code, {"Content-Type" => content_type, "Content-Length" => html_content.size.to_s }, [html_content]]
+    end
+
+    def process_html(content)
+      @content = content
+      filename = 'app.html.erb'   # @content is used in app.html.erb
+      erb = ERB.new(File.read(filename))
+      erb.def_method(App, 'render(content)', filename)
+      self.render(content)
     end
 end
 
